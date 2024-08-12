@@ -5,18 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'country_code_widget.dart/country_code_widget.dart';
 
-// ignore: must_be_immutable
 class PhoneFromFieldSection extends StatelessWidget {
-   PhoneFromFieldSection({super.key});
-late String phoneNumber;
- submit(p0){
- if(p0!.isEmpty){
-              return 'please enter your phone number';
-            }else if (p0.length < 11) {
-              return 'please enter valid phone number';
-            }
-            return null;
-}
+ const   PhoneFromFieldSection({super.key, required this.validator, this.controller, this.onSaved});
+
+final Function(String?) validator;
+final TextEditingController? controller;
+final Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -29,11 +23,9 @@ late String phoneNumber;
         Expanded(
           flex: 2,
           child: PhoneFromField(
-            validator: submit,
-            controller: TextEditingController(),
-            onSaved: (value){
-              phoneNumber=value!;
-            },
+            validator: validator,
+            controller: controller,
+            onSaved: onSaved,
           ) ,
         ),
       ],

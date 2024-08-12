@@ -1,5 +1,6 @@
 // constnats/strings.dart
 const String loginScreen='/';
+const String otpScreen ='/otpScreen';
 class AppStrings {
   static const String whatIsYourNumber = "What is your phone number ?",
       verifyYourNumber = "Verify your phone number ",
