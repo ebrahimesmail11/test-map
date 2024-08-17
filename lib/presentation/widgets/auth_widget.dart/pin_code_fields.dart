@@ -4,11 +4,12 @@ import 'package:pinput/pinput.dart';
 
 import '../../../constnats/my_colors.dart';
 
+// ignore: must_be_immutable
 class PinCodeFields extends StatelessWidget {
-  const PinCodeFields({
-    super.key,
+ const    PinCodeFields({
+    super.key, 
   });
-
+ 
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -44,8 +45,8 @@ class PinCodeFields extends StatelessWidget {
           //  controller: code,
           length: 6,
           onCompleted: (value) {
-            /*   collectData.otp = value;
-                  logger.d(collectData.toJson());*/
+           // otpCode = value;
+                  // logger.d(collectData.toJson());
           },
           validator: (p0) {
             return p0!.isEmpty ?'Please Enter Otp Code' : null;

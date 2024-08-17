@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_maps/app_router.dart';
+import 'package:flutter_maps/main.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.appRouter});
@@ -18,10 +21,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+           primarySwatch: Colors.blue,
             useMaterial3: true,
           ),
           onGenerateRoute: appRouter.generateRoute,
+          initialRoute: initialRoute ,
         );
       }
     );
