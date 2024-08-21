@@ -102,11 +102,11 @@ void validateThenDoLogin(BuildContext context) {
         if (state is Loading) {
          showProgressIndicator(context);
         }
-        if (state is PhoneAuthSubmited) {
+        if (state is PhoneNumberSubmited) {
           Navigator.pop(context);
           Navigator. of(context).pushNamed(otpScreen,arguments: phoneNumber);
         }
-        if (state is Failure) {
+        if (state is ErrorOccurred) {
           Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

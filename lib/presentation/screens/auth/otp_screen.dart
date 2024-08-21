@@ -54,7 +54,7 @@ late String otpCode;
     );
   }
 void _buildOtpLogin(BuildContext context) async {
-  context.read<PhoneAuthCubit>().submitOtp(otpCode);
+  context.read<PhoneAuthCubit>().submitOTP(otpCode);
 }
  
  _buildPinCodeFields(){

@@ -21,7 +21,7 @@ class _MapScreenState extends State<MapScreen> {
         child: Container(
           color: Colors.white,
           child: CustomButton(title: "Sign out", onPressed: () {
-             phoneAuthCubit.signOut();
+             phoneAuthCubit.logOut();
            Navigator.of(context).pushReplacementNamed(loginScreen);
           }),
         ),

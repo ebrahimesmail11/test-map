@@ -1,15 +1,18 @@
 part of 'phone_auth_cubit.dart';
 
+@immutable
 abstract class PhoneAuthState {}
 
-final class PhoneAuthInitial extends PhoneAuthState {}
+class PhoneAuthInitial extends PhoneAuthState {}
 
-final class Loading extends PhoneAuthState {}
+class Loading extends PhoneAuthState {}
 
-final class Failure extends PhoneAuthState {
+class ErrorOccurred extends PhoneAuthState {
   final String errorMsg;
-  Failure({required this.errorMsg});
-}
-final class PhoneAuthSubmited extends PhoneAuthState {}
 
-final class PhoneAuthOtpVerified extends PhoneAuthState {}
+  ErrorOccurred({required this.errorMsg});
+}
+
+class PhoneNumberSubmited extends PhoneAuthState{}
+
+class PhoneOTPVerified extends PhoneAuthState{}

@@ -19,11 +19,11 @@ class PhoneVerificationBloc extends StatelessWidget {
         if (state is Loading) {
          showProgressIndicator(context);
         }
-        if (state is PhoneAuthOtpVerified) {
+        if (state is PhoneOTPVerified) {
           Navigator.pop(context);
           Navigator. of(context).pushReplacementNamed(mapScreen);
         }
-        if (state is Failure) {
+        if (state is ErrorOccurred) {
          // Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
