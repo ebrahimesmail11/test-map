@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_maps/presentation/widgets/auth_widget.dart/phone_from_field.dart';
+import 'package:flutter_maps/presentation/screens/auth/widgets/auth_widget.dart/phone_from_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'country_code_widget.dart/country_code_widget.dart';

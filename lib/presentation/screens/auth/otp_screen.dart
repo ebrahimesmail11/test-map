@@ -8,8 +8,8 @@ import 'package:flutter_maps/functions/show_progress_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../widgets/auth_widget.dart/custom_button.dart';
-import '../../widgets/auth_widget.dart/phone_verification_bloc.dart';
+import 'widgets/auth_widget.dart/custom_button.dart';
+import 'widgets/auth_widget.dart/phone_verification_bloc.dart';
 
 // ignore: must_be_immutable
 class OtpScreen extends StatelessWidget {

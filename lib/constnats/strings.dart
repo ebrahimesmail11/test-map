@@ -5,7 +5,7 @@ const String mapScreen='/mapScreen';
 class AppStrings {
   static const String whatIsYourNumber = "What is your phone number ?",
       verifyYourNumber = "Verify your phone number ",
-      apiKey = "AIzaSyA-1PgNN85qHO75cmhxsA4PgUmUxAJnhk8",
+      apiKey = "AIzaSyCuTilAfnGfkZtIx0T3qf-eOmWZ_N2LpoY",
       // autoCompleteBaseUrl =
       //     "https://maps.googleapis.com/maps/api/place/autocomplete/json",
       // placeDetailsBaseUrl =

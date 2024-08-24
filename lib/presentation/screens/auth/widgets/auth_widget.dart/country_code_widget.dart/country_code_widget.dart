@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../constnats/my_colors.dart';
+import '../../../../../../constnats/my_colors.dart';
 
 class CountryCodeWidget extends StatelessWidget {
   const CountryCodeWidget({
