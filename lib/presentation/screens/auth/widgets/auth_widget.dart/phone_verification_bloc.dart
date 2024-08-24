@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_maps/constnats/strings.dart';
 
 
-import '../../../business_logic/cubit/phone_auth/phone_auth_cubit.dart';
-import '../../../functions/show_progress_indicator.dart';
+import '../../../../../business_logic/cubit/phone_auth/phone_auth_cubit.dart';
+import '../../../../../functions/show_progress_indicator.dart';
 
 class PhoneVerificationBloc extends StatelessWidget {
   const PhoneVerificationBloc({super.key});

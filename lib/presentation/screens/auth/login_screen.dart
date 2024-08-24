@@ -9,8 +9,8 @@ import 'package:flutter_maps/functions/show_progress_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
-import '../../widgets/auth_widget.dart/custom_button.dart';
-import '../../widgets/auth_widget.dart/phone_from_field_section.dart';
+import 'widgets/auth_widget.dart/custom_button.dart';
+import 'widgets/auth_widget.dart/phone_from_field_section.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
