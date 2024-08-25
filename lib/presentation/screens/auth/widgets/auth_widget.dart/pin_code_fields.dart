@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../../constnats/my_colors.dart';
+import '../../../../../constnats/my_colors.dart';
 
 // ignore: must_be_immutable
 class PinCodeFields extends StatelessWidget {
