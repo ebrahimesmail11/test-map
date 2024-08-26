@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_maps/business_logic/cubit/location/location_cubit.dart';
 import 'package:flutter_maps/business_logic/cubit/phone_auth/phone_auth_cubit.dart';
 import 'package:flutter_maps/presentation/screens/auth/login_screen.dart';
 import 'package:flutter_maps/presentation/screens/auth/otp_screen.dart';
@@ -23,16 +22,21 @@ class AppRouter {
                   child: LoginScreen(),
                 ));
       case otpScreen:
-      final phoneNumber=settings.arguments;
+        final phoneNumber = settings.arguments;
         return MaterialPageRoute(
             builder: (_) => BlocProvider<PhoneAuthCubit>.value(
                   value: phoneAuthCubit!,
-                  child:  OtpScreen( phoneNumber: phoneNumber,),
+                  child: OtpScreen(
+                    phoneNumber: phoneNumber,
+                  ),
                 ));
       case mapScreen:
         return MaterialPageRoute(
-          builder: (_) => const MapScreen(),
-        );         
+          builder: (_) => BlocProvider(
+            create: (context) => LocationCubit(),
+            child: const MapScreen(),
+          ),
+        );
     }
   }
 }
