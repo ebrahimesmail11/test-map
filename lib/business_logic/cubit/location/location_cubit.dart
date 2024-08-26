@@ -53,10 +53,12 @@ class LocationCubit extends Cubit<LocationState> {
 
   Future<void> determineCurrentPosition() async {
     try {
-      bool isServiceEnabled = await Geolocator.isLocationServiceEnabled();
-    if(!isServiceEnabled){
-      await Geolocator.requestPermission();
-    }
+      /// fixed to error 'User denied permissions to access the device\'s location.
+    //   bool isServiceEnabled = await Geolocator.isLocationServiceEnabled();
+    // if(!isServiceEnabled){
+    //   await Geolocator.requestPermission();
+    // }
+     await Geolocator.requestPermission();
     position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high,
     );
