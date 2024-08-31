@@ -1,4 +1,4 @@
-import 'dart:async';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,11 +6,12 @@ import 'package:flutter_maps/business_logic/cubit/location/location_cubit.dart';
 
 import 'package:flutter_maps/business_logic/cubit/phone_auth/phone_auth_cubit.dart';
 import 'package:flutter_maps/constnats/my_colors.dart';
-import 'package:flutter_maps/helpers/location_helper.dart';
+
 import 'package:flutter_maps/presentation/screens/home/widgets/build_map_widget.dart';
+import 'package:flutter_maps/presentation/screens/home/widgets/floating_search_app_bar.dart';
+import 'package:flutter_maps/presentation/screens/home/widgets/my_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -20,25 +21,8 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  // PhoneAuthCubit phoneAuthCubit = PhoneAuthCubit();
-  // static Position? position;
-  // final Completer<GoogleMapController> _controller =
-  //     Completer<GoogleMapController>();
-  // static final CameraPosition _kGooglePlex = CameraPosition(
-  //   bearing: 0.0,
-  //   target: LatLng(position!.latitude, position!.latitude),
-  //   tilt: 0.0,
-  //   zoom: 17,
-  // );
-  // Future<void> getCurrentPosition() async {
-  //   position = await LocationHelper.determineCurrentPosition().whenComplete(() {
-  //     setState(() {});
-  //   });
-  // }
-  // Future <void> _goToCurrentLocation() async {
-  //   final GoogleMapController controller = await _controller.future;
-  //   controller.animateCamera(CameraUpdate.newCameraPosition(_kGooglePlex));
-  // }
+
+
   @override
   void initState() {
     super.initState();
@@ -47,28 +31,18 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       drawer:   MyDrawer(),
       body: BlocBuilder<LocationCubit, LocationState>(
         builder: (context, state) {
           return state is Loading? const   Center(child: CircularProgressIndicator(color: MyColors.primaryColor,)): state is LocationError? Center(child: Text(state.errorMsg.toString())): Stack(
+            fit: StackFit.expand,
             children: [
               BuildMapWidget(
                 initialCameraPosition: context.read<LocationCubit>().googlePlex(),
                 onMapCreated: (controller) => context.read<LocationCubit>().kController.complete(controller),
               ),
+                FloatingSearchAppBar( controller: context.read<LocationCubit>().controller,),
             ]
-          //   children: [
-          //     position != null
-          //         ? BuildMapWidget(
-          //             initialCameraPosition: _kGooglePlex,
-          //             onMapCreated: (controller) =>
-          //                 _controller.complete(controller),
-          //           )
-          //         : const Center(
-          //             child: CircularProgressIndicator(
-          //               color: MyColors.primaryColor,
-          //             ),
-          //           ),
-          //   ],
            );
         },
       ),

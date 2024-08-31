@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
+
 
 part 'location_state.dart';
 
@@ -11,6 +13,7 @@ class LocationCubit extends Cubit<LocationState> {
 
   Position? position;
   final Completer<GoogleMapController> kController = Completer<GoogleMapController>();
+   FloatingSearchBarController controller =   FloatingSearchBarController();
 
   Future<void> checkLocationPermissions() async {
     emit(LocationLoading());
